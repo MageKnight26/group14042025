@@ -1,9 +1,11 @@
 welcome = "Вітаємо у примітивному калькуляторі!"
+input_error = "Це не число, спробуй ще раз: "
 # Variable operation signs
 addition = "+"
 subtraction = "-"
 multiply = "*"
 divide = "/"
+all_operations = addition, subtraction, multiply, divide
 
 print(welcome)
 # First input number
@@ -15,7 +17,7 @@ while True:
         first_number = float(first_number_input)
         break
     else:
-        print("Це не число, спробуй ще раз: ")
+        print(input_error)
 # Second input number
 while True:
     second_number_input = input("Введіть друге число:").strip()
@@ -25,13 +27,11 @@ while True:
         second_number = float(second_number_input)
         break
     else:
-        print("Це не число, спробуй ще раз: ")
+        print(input_error)
 # Action selected
 while True:
-    action = input(
-        f"Введіть бажану дію над числами ({addition} {subtraction} {multiply} {divide}):"
-    ).strip()
-    if action in [addition, subtraction, multiply, divide]:
+    action = input(f"Введіть бажану дію над числами ({all_operations}):").strip()
+    if action in all_operations:
         break
     else:
         print(
@@ -47,7 +47,7 @@ if action == divide:
         elif second_number_input.replace(".", "", 1).isdigit():
             second_number = float(second_number_input)
         else:
-            print("Це не число. Споробуйте ще раз: ")
+            print(input_error)
 # Calculations for the selected action
 if action == addition:
     result = first_number + second_number
