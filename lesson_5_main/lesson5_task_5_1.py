@@ -14,7 +14,7 @@ def is_valid_variable_name(name):  # checking variable name
             return False
         if char.isspace():  # Must not contain spaces or punctuation marks - except "_"
             return False
-    if name.count("_") > 1:  # Only one "_" in the whole name
+    if set(name) == {"_"} and len(name) > 1:  # Only one "_" in the whole name
         return False
     return True
 
