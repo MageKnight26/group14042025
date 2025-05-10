@@ -1,6 +1,6 @@
 def get_common_multiplies(limit, divide_a, divide_b):
-    multiplies_a = {x for x in range(100) if x % 3 == 0}
-    multiplies_b = {x for x in range(100) if x % 5 == 0}
+    multiplies_a = {x for x in range(limit) if x % divide_a == 0}
+    multiplies_b = {x for x in range(limit) if x % divide_b == 0}
     return multiplies_a & multiplies_b
 
 
