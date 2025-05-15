@@ -1,5 +1,5 @@
 def find_unique_value(some_list):
-    for num in some_list:
+    for num in set(some_list):
         if (
             some_list.count(num) == 1
         ):  # Count how many times num appears in the list, and if 1 time then we have found a unique value
