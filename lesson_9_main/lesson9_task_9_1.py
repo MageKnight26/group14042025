@@ -14,7 +14,11 @@ def popular_words(
     :return Dict[str, int]: A dictionary with the search words as keys and their counts as values.
     """
     word_list = text.lower().split()
-    return {word: word_list.count(word) for word in words}
+    unique_words = set(words)
+    result = {}
+    for word in unique_words:
+        result[word] = word_list.count(word)
+    return {word: result.get(word, 0) for word in words}
 
 
 assert popular_words(
